@@ -7,11 +7,10 @@ export default class Search extends Component {
         render() {
             return(
                 <div>
-                <form method="GET">
-                    <input name="user" type="text" placeholder="Insert user: " />
-                     <input type= 'submit' name="Submit" value="Send" />
-
-            </form>
+                    <form method="GET">
+                        <input name="user" type="text" placeholder="Insert user: " />
+                        <input type= 'submit' name="Submit" value="Send" />
+                    </form>
                 </div>
             );
         }

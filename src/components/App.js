@@ -1,7 +1,6 @@
 import React from 'react';
-import Search from 'SearchBar.js';
-import List from 'List';
-
+import Search from './SearchBar.js';
+import List from './List';
 
 const App = () => (
     <div>
@@ -11,4 +10,3 @@ const App = () => (
 );
 
 export default App;
-

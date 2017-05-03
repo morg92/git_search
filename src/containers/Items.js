@@ -4,7 +4,7 @@ const Items = ({onSubmit, text}) => (
     <li
     onSubmit={onSubmit}
     >
-    {text}
+       {text}
     </li>
 );
 

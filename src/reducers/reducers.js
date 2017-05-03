@@ -10,7 +10,7 @@ function takeApp(state = InitialState, action) {
         return [
             ...state,
             {
-                text: action.tetx
+                text: action.text
             }
         ];
     }
@@ -22,4 +22,3 @@ function takeApp(state = InitialState, action) {
 }
 
 export default takeApp;
-

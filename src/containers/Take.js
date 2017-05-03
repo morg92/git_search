@@ -7,7 +7,7 @@ let takeUser = ({ dispatchTakeUser }) => {
     return (
         <div>
             <form
-                onSubmit={
+                onSubmit = {
                     e => {
                         e.preventDefault();
                         if (!input.value.trim()) {
@@ -17,10 +17,10 @@ let takeUser = ({ dispatchTakeUser }) => {
                         input.value = '';
                     }}>
                 <input
-                    ref={user => {
+                    ref = {user => {
                         input = user;
                     }} />
-                <input type="button">
+                <input type = "button">
                     Search
                 </input>
             </form>
