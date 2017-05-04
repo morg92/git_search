@@ -1,11 +1,11 @@
 import React from 'react';
 import Search from './SearchBar.js';
-import List from './List';
+import FilterKey from './../containers/FilterKey';
 
 const App = () => (
     <div>
         <Search />
-        <List />
+        <FilterKey />
     </div>
 );
 

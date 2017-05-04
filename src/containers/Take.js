@@ -1,32 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { take } from '../actions/index.js';
 
-let takeUser = ({ dispatchTakeUser }) => {
-    let input;
-    return (
-        <div>
-            <form
-                onSubmit = {
-                    e => {
+class TakeUser extends Component {
+
+    handleOnChange(e, v) {
+        //setText(v);
+    }
+
+    render() {
+        const { data, ui, dispatchTakeUser} = this.props;
+
+
+        return (
+            <div>
+                <form
+                    onSubmit={e => {
                         e.preventDefault();
-                        if (!input.value.trim()) {
+                        if (!ui.text.value.trim()) {
                             return;
                         }
-                        dispatchTakeUser(input.value);
-                        input.value = '';
+                        dispatchTakeUser();
                     }}>
-                <input
-                    ref = {user => {
-                        input = user;
-                    }} />
-                <input type = "button">
-                    Search
+                    <input onChange={this.handleOnChange.bind(this)} />
+                    <input type="button" value={ui.text}> 
+                        Search
                 </input>
-            </form>
-        </div>
-    );
-};
+                </form>
+            </div>
+        );
+    }
+}
 
 let mapDispatchToProps = (dispatch) => {
     return {
@@ -39,4 +43,4 @@ let mapDispatchToProps = (dispatch) => {
 export default connect(
     null,
     mapDispatchToProps
-)(takeUser);
+)(TakeUser);

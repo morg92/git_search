@@ -1,22 +1,17 @@
-import React from 'react';
-import { FilterKey } from './FilterKey';
+import React, { Component } from 'react';
 
-const list = () => (
-    <div>
-        <ul>
-            <li>
-                Name: {' '}
-                <FilterKey key='name'></FilterKey>
-            </li>
-            <li>
-                Avatar: {' '}
-                <FilterKey key='avatar_url'></FilterKey>
-            </li>
-            <li>
-                Repos: {' '}
-                <FilterKey key='public_repos'></FilterKey>
-            </li>
-        </ul>
-    </div>
-);
-export default list;
+export default class List1 extends Component {
+    render() {
+        const { data, ui } = this.props;
+        return (
+            <div>
+                <ul>
+                  {data.userList}
+                </ul>
+            </div>
+        );
+    }
+}
+
+
+

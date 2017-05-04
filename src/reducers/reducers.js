@@ -1,24 +1,22 @@
-import { take } from '../actions';
-
 const InitialState = {
-    take: take.TAKE,
-    showList: []
+    ui: {
+        text: ''
+    },
+    data: {
+        userList: null,
+        isUserLoading: false
+    }
 };
 
-function takeApp(state = InitialState, action) {
-    if (action.type === 'TAKE') {
-        return [
+export default function takeApp(state = InitialState, action) {
+    if (action.type === 'GITHUB_TAKE_USER_REQUEST') {
+        return {
             ...state,
-            {
-                text: action.text
+            data: {
+                ...state.data,
+                userList: action.payload.userList
             }
-        ];
-    }
-    else if
-      (action.type === 'undefined') {
-        return state;
+        };
     }
     return state;
 }
-
-export default takeApp;
