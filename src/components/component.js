@@ -1,36 +1,39 @@
 import React, { Component } from 'react';
-import { take } from '../actions/index.js';
 
 export default class Search extends Component {
     constructor(props) {
         super(props);
+        this.state = {value: ''};
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    handleChange(event) {
+        this.setState({value: event.target.value});
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        this.props.dispatchTakeUser(this.state.value);
+    }
+
     render() {
         return (
             <div>
                 <form
-                    onSubmit={e => {
-                        e.preventDefault();
-                        if (!ui.text.value.trim()) {
-                            return;
-                        }
-                        dispatchTakeUser();
-                    }}>
-                    <input onChange={this.handleOnChange.bind(this)} />
-                    <input type="button" value={ui.setText(this)}>
-                        Search
-                </input>
+                    onSubmit = {this.handleSubmit}>
+                    <input type="text" placeholder="Insert user :" value={this.state.value} onChange={this.handleChange} />
+                    <input type="submit" value="Search" />
                 </form>
                 <div>
-                <ul>
-                    <li>
-                        {data.userList}
-                    </li>
+                    <ul>
+                        <li>
+                            {this.props.data.userList}
+                        </li>
                     </ul>
                 </div>
             </div>
         );
     }
 }
-
-//ADD FUNCTION CALL

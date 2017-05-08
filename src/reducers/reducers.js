@@ -40,15 +40,31 @@ export default function takeApp(state = InitialState, action) {
     }
 }
 
-/*export default function takeApp(state = InitialState, action) {
-    if (action.type === 'GITHUB_TAKE_USER_REQUEST') {
-        return {
-            ...state,
-            data: {
-                ...state.data,
-                userList: action.payload.userList
-            }
-        };
+
+/*
+function initialState() {
+    return {
+        user: "",
+        repos: [],
+        isLoader: false,
+        error: false
+    };
+}
+
+export default function takeApp(state, action) {
+    const previousState = (state ? state : initialState());
+    switch (action.type) {
+        case 'GITHUB_TAKE_USER_REQUEST':
+            return takeUser(previousState, action);
+
+        case 'GITHUB_USER_CHANGED':
+            return userChanged(previousState, action);
+
+        case 'GITHUB_IS_LOADING':
+            return isLoading(previousState, action);
+
+        default:
+            return previousState;
     }
-    return state;
-}*/
+}
+*/

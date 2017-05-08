@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 import './style.css';
 
-import './store/configureStore.js';
+import './store/store.js';
 /*import React from 'react';
 import { render } from 'react-dom';
 import Search from './component/SearchBar';
