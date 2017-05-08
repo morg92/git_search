@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { take } from '../actions/index.js';
-import Lista from '../components/List.js';
+import Components from './../components/component.js';
+import { take } from './../actions/index.js';
 
 let mapStateToProps = ({ data, ui }) => ({
     ui,
@@ -12,6 +12,9 @@ let mapDispatchToProps = (dispatch) => {
     return ({
         dispatchList: () => {
             dispatch(take());
+        },
+        dispatchTakeUser: (value) => {
+            dispatch(take(value));
         }
     });
 };
@@ -19,4 +22,4 @@ let mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Lista);
+)(Components);

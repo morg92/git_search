@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { take } from '../actions/index.js';
 
-class TakeUser extends Component {
-
-    handleOnChange(e, v) {
-        //setText(v);
+export default class Search extends Component {
+    constructor(props) {
+        super(props);
     }
-
     render() {
-        const { data, ui, dispatchTakeUser} = this.props;
-
-
         return (
             <div>
                 <form
@@ -23,24 +17,20 @@ class TakeUser extends Component {
                         dispatchTakeUser();
                     }}>
                     <input onChange={this.handleOnChange.bind(this)} />
-                    <input type="button" value={ui.text}> 
+                    <input type="button" value={ui.setText(this)}>
                         Search
                 </input>
                 </form>
+                <div>
+                <ul>
+                    <li>
+                        {data.userList}
+                    </li>
+                    </ul>
+                </div>
             </div>
         );
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        dispatchTakeUser: (value) => {
-            dispatch(take(value));
-        }
-    };
-};
-
-export default connect(
-    null,
-    mapDispatchToProps
-)(TakeUser);
+//ADD FUNCTION CALL

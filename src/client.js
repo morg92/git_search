@@ -19,8 +19,3 @@ render(
     </div>,
     document.getElementById('root')
 );*/
-
-/* API GIT
-info user: https://api.github.com/users/<username>
-info repos: https://api.github.com/users/<username>/repos */
-

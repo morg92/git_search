@@ -4,7 +4,9 @@ import FilterKey from './../containers/FilterKey';
 
 const App = () => (
     <div>
-        <Search />
+        <Search
+            invia= {this.props}
+        />
         <FilterKey />
     </div>
 );
