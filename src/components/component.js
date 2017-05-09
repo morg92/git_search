@@ -29,7 +29,7 @@ export default class Search extends Component {
                 <div>
                     <ul>
                         <li>
-                            {this.props.data.userList}
+                            {JSON.stringify(this.props.data.userList,null,'\t')}
                         </li>
                     </ul>
                 </div>
